@@ -1,43 +1,47 @@
-import React from 'react'
+import React from 'react';
 import ButtonItem from '../components/ButtonItem';
 import ButtonItemTwo from '../components/ButtonItemTwo';
-import '../all.css'
+
+import FetchApi from '../components/Fetch';
+import '../all.css';
 
 
 
 class VeganFood extends React.Component{
     render(){
         return(
-        <div className="App">
-        <div className="App-header">
+         <div className="App">
+             <header className="App-header">
+                 VEGAN FOOD
             <ul>
-                <li><input /> Table</li> 
-                <li><input /> Waiter</li>
-            </ul>
-        </div>
-        
+           <li>Table<input /></li>
+           <li>Waiter-Waitress<input /></li>
+           </ul>
+        </header>
 
 
         <div>
          <nav className="Nav">
             <ul>
-                <li><ButtonItem /></li> 
-                <li><ButtonItem /></li> 
-                <li><ButtonItem /></li> 
+                <li><ButtonItem /></li>
+                <li><ButtonItem /></li>
+                <li><ButtonItem /></li>
            </ul>
         </nav>
         
         <div className="title-Menu">
             
-                <p>Menu</p>
+                <p>Menú</p>
                 <h1>Total Cliente....</h1>
         
         </div>
         
         <div className="Cont" id="contMenu">
-        
+
+        <p>MENÚ</p>
+
             <ul>
-             <li><ButtonItemTwo /></li>
+             <li><FetchApi /></li>
              <li><ButtonItemTwo /></li>
              <li><ButtonItemTwo /></li>
              <li><ButtonItemTwo /></li>
@@ -47,15 +51,16 @@ class VeganFood extends React.Component{
         </div>
 
         <div className="Cont2">
-            <p>contenedor 2</p>
-            
-        </div>
+            <p>Ticket</p>
+            <ButtonItemTwo />
+         </div>
      </div>
 </div>
-
-            )
+ )
     }
 
 }
+
+
 
 export default VeganFood;

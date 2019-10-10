@@ -9,7 +9,6 @@ class ButtonItem extends React.Component{
 
      )
  }   
-
 }
 
 export default ButtonItem
