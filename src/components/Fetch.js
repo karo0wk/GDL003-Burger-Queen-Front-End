@@ -1,8 +1,14 @@
 import React from 'react';
 
-const API = 'https://rickandmortyapi.com/api/character/';
-const defaultQuery = '?name=dr&gender=';
 
+/* const API = 'https://rickandmortyapi.com/api/character/';
+const defaultQuery = '?name=dr&gender='; */
+
+/* const API = 'localhost:3000/foods';
+const defaultQuery = 'https://192.168.43.1'; */
+
+const API = 'http://172.17.31.182:3000';
+const defaultQuery = '/foods';
 
 class FetchApi extends React.Component {
   constructor(props) {
@@ -10,28 +16,38 @@ class FetchApi extends React.Component {
 
     this.state = {
       results: [],
+      isLoading: true
     };
   }
 
   componentDidMount() {
     fetch(API + defaultQuery)
       .then(response => response.json())
-      .then(data => this.setState({ results: data.results }))
+      .then(data => {
+        console.log(data)
+        this.setState({ results: data })
+      })
 
   }
-render() {
-  const { results } = this.state;
+  render() {
 
-  return (
-    <ul>
-      {results.map(point =>
-        <li key={point.id}>
-          <a href={point.image}>{point.name}</a>
-        </li>
-      )}
-    </ul>
-  );
-}
+
+    if (this.state.loading) {
+      return <div>loading...</div>
+    }
+
+    //conditional rendering
+    return (
+      <ul>
+        {this.state.results.map(point =>
+          <li key={point.id}>
+            <a href={point}>{point.food}{point.price}</a>
+            {/*<ButtonItemTwo href={point}>{point.food}{point.price}></ButtonItemTwo>*/}
+          </li>
+        )}
+      </ul>
+    );
+  }
 
 
 }

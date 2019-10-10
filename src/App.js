@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
          <Switch>
-            <Route exact path="/VeganFood" component={VeganFood }/>
+            <Route exact path="/foods" component={VeganFood }/>
         </Switch>
         </BrowserRouter>     
   );
